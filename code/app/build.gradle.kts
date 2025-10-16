@@ -29,10 +29,15 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
+    tasks.withType<Test>{
+        useJUnitPlatform()
+    }
 }
 
 dependencies {
-
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.0.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.0.1")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -40,4 +45,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation(files("/Users/finco/Library/Android/sdk/platforms/android-35/android.jar"))
 }
