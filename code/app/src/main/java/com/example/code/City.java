@@ -1,5 +1,8 @@
 package com.example.code;
 
+/**
+ * This is a class that defines a City.
+ */
 public class City implements Comparable<City>{
     private String city;
     private String province;
